@@ -6,13 +6,63 @@
 
 body {
     font-family: 'Noto Sans', sans-serif;
+    height: 150vh;
+    width: 100%;
 }
 
-header {
-    height: 10vh;
-    background-color: black;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+}
+
+.logo {
+    display: grid;
+    grid-area: 1/1/2/3;
 }
 
 .logo img {
     height: 10vh;
+}
+
+header {
+    display: grid;
+    grid-area: 1/1/2/19;
+    padding: 0 1em;
+    height: 10vh;
+    background-color: black;
+    align-items: center;
+    color: #ebdc1e;
+
+}
+
+nav {
+    display: grid;
+    grid-area: 1/3/2/19;
+
+}
+
+ul {
+    display: inline-flex;
+    justify-content: center;
+}
+
+li {
+    padding: 0 2em;
+    list-style: none;
+}
+
+.hero {
+    display: grid;
+    grid-area: 2/1/9/19;
+}
+
+.info {
+    display: grid;
+    grid-area: 9/1/17/19;
+}
+
+footer {
+    display: grid;
+    grid-area: 17/1/19/19;
 }
