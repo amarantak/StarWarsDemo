@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Noto Sans', sans-serif;
-    height: 150vh;
+    height: 170vh;
     width: 100%;
 }
 
@@ -29,7 +29,7 @@ header {
     display: grid;
     grid-area: 1/1/2/19;
     padding: 0 1em;
-    height: 10vh;
+    height: 15vh;
     background-color: black;
     align-items: center;
 
@@ -55,11 +55,27 @@ li {
 a {
     color: #ebdc1e;
     text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .hero {
-    display: grid;
+    display: inline-flex;
     grid-area: 2/1/9/19;
+    background-color: yellow;
+}
+
+.hero img {
+    display: grid;
+    height: 90vh;
+}
+
+.cta {
+    display: grid;
+    height: 90vh;
+    clip-path: polygon(40% 0, 100% 0%, 100% 100%, 0% 100%);
+    background-color: red;
+    z-index: 4;
 }
 
 .info {
