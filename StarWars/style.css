@@ -32,7 +32,7 @@ header {
     height: 10vh;
     background-color: black;
     align-items: center;
-    color: #ebdc1e;
+
 
 }
 
@@ -50,6 +50,11 @@ ul {
 li {
     padding: 0 2em;
     list-style: none;
+}
+
+a {
+    color: #ebdc1e;
+    text-decoration: none;
 }
 
 .hero {
