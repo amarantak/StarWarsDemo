@@ -49,9 +49,14 @@ ul {
     justify-content: center;
 }
 
+ul:hover li:not(:hover) a {
+    opacity: 0.2;
+}
+
 li {
     padding: 0 2em;
     list-style: none;
+    cursor: pointer;
 }
 
 a {
@@ -60,6 +65,7 @@ a {
     font-weight: 600;
     font-size: 1rem;
     text-transform: uppercase;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hero {
@@ -160,13 +166,14 @@ footer {
     grid-area: 17/1/19/19;
     background-color: #24262b;
     color: white;
+    justify-content: center;
 
 }
 
 .footer-content {
     display: block;
     align-self: center;
-    justify-content: center;
+
 }
 
 .social a {
