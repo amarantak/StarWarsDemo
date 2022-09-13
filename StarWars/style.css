@@ -8,8 +8,6 @@ body {
     font-family: 'Noto Sans', sans-serif;
     height: 150vh;
     width: 100%;
-    background-color: black;
-
 }
 
 .grid-container {
@@ -188,7 +186,7 @@ footer {
 .footer-content {
     display: block;
     align-self: center;
-
+    text-align: center;
 }
 
 .social a {
@@ -212,5 +210,32 @@ footer {
 .copyright {
     text-align: center;
     align-items: center;
+
+}
+
+/*****************************************************************/
+
+.content {
+    display: grid;
+    grid-area: 2/1/17/19;
+    justify-content: center;
+    background-color: red;
+
+}
+
+.content h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.cards-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(260px, 1fr));
+    grid-gap: 2em;
+    align-self: center;
+    justify-content: center;
+    background-color: blue;
 
 }
