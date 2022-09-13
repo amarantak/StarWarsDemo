@@ -23,7 +23,7 @@ include_once('functions/functions.php');
     <div class="grid-container">
         <header>
             <div class="logo">
-                <a href="index.html"><img src="img/logo.png" alt=""></a>
+                <a href="index.html"><img src="img/logo.png" alt="Star Wars Logo"></a>
             </div>
             <nav>
                 <ul>
@@ -36,7 +36,7 @@ include_once('functions/functions.php');
             </nav>
         </header>
         <section class="hero">
-            <img src="img/hero.webp" alt="Image of Star Wars The Trilogy DVD">
+            <img src="img/hero.webp" class="hero-image" alt="Image of Star Wars The Trilogy DVD">
             <div class="cta">
                 <h2>Where <br>Everything<br>Began</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Consequuntur, laboriosam.</p>
@@ -78,12 +78,15 @@ include_once('functions/functions.php');
                         <span class="sr-only">Visit example.com</span>
                     </a>
                 </div><br>
-                <a href="#">Admin Login</a><br>
+                <a href="pages/admin.php">Admin Login</a><br>
                 <p>&copy;2022 Star Wars Fans</p>
             </div>
         </footer>
     </div>
-    <script src="js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+    <script src="js/app.js">
+    </script>
 </body>
 
 </html>

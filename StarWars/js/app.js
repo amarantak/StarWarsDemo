@@ -1,8 +1,10 @@
-var underlineMenuItems = document.querySelectorAll("ul li");
-underlineMenuItems[0].classList.add("active");
-underlineMenuItems.forEach(function (item) {
-    item.addEventListener("click", function () {
-        underlineMenuItems.forEach(function (item) { return item.classList.remove("active"); });
-        item.classList.add("active");
-    });
-});
+const hero = document.querySelector('.hero-image');
+const cta = document.querySelector('.cta');
+
+const tl = new TimelineMax();
+
+
+tl.fromTo(hero, 1.2, { width: '0%' }, { width: '100%' })
+    .fromTo(cta, 1.2, { width: '0%' }, { width: '100%' }, "-=1.2");
+
+
