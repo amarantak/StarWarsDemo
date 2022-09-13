@@ -6,8 +6,9 @@
 
 body {
     font-family: 'Noto Sans', sans-serif;
-    height: 170vh;
+    height: 150vh;
     width: 100%;
+
 }
 
 .grid-container {
@@ -57,25 +58,57 @@ a {
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
+    text-transform: uppercase;
 }
 
 .hero {
-    display: inline-flex;
+    display: grid;
     grid-area: 2/1/9/19;
-    background-color: yellow;
+    background-color: black;
+
 }
 
 .hero img {
     display: grid;
+    grid-area: 2/1/9/5;
     height: 90vh;
 }
 
 .cta {
     display: grid;
+    grid-area: 2/5/9/19;
     height: 90vh;
     clip-path: polygon(40% 0, 100% 0%, 100% 100%, 0% 100%);
-    background-color: red;
-    z-index: 4;
+    z-index: 1;
+    justify-items: right;
+    padding-right: 4em;
+    align-items: center;
+    color: white;
+    background: linear-gradient(to right, black, #899193);
+
+}
+
+.cta h2 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: right;
+}
+
+.cta p {
+    font-size: 1rem;
+    text-align: right;
+}
+
+.cta .button {
+    display: grid;
+    background-color: black;
+    padding: 1rem 2rem;
+    align-self: center;
+}
+
+.button a {
+    color: white;
 }
 
 .info {
