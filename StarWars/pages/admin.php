@@ -22,7 +22,7 @@ include_once('../functions/functions.php');
     <div class="grid-container">
         <header>
             <div class="logo">
-                <a href="index.html"><img src="img/logo.png" alt=""></a>
+                <a href="index.html"><img src="../img/logo.png" alt=""></a>
             </div>
         </header>
         <div class="content">

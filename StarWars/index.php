@@ -15,7 +15,7 @@ include_once('functions/functions.php');
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 
@@ -38,7 +38,7 @@ include_once('functions/functions.php');
         <section class="hero">
             <img src="img/hero.webp" class="hero-image" alt="Image of Star Wars The Trilogy DVD">
             <div class="cta">
-                <h2>Where <br>Everything<br>Began</h2>
+                <h2>When <br>Everything<br>Began</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Consequuntur, laboriosam.</p>
                 <div class="button">
                     <a href="#">Know More</a>
