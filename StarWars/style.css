@@ -79,6 +79,12 @@ a {
     display: grid;
     grid-area: 2/1/9/5;
     height: 90vh;
+    cursor: pointer;
+}
+
+.hero img:hover {
+    opacity: 0.2;
+
 }
 
 .cta {
@@ -113,11 +119,16 @@ a {
     padding: 1rem 2rem;
     align-self: center;
     border: 2px solid white;
+    cursor: pointer;
 }
 
 .button a {
     color: #ebdc1e;
 
+}
+
+.button:hover {
+    opacity: 0.2;
 }
 
 .info {
@@ -151,6 +162,10 @@ a {
     padding: 1em 2em;
     border: 1px solid white;
     background: transparent;
+}
+
+button:hover {
+    opacity: 0.2;
 }
 
 .right {
