@@ -8,6 +8,7 @@ body {
     font-family: 'Noto Sans', sans-serif;
     height: 150vh;
     width: 100%;
+    background-color: black;
 
 }
 
@@ -102,21 +103,92 @@ a {
 
 .cta .button {
     display: grid;
-    background-color: black;
+    background-color: transparent;
     padding: 1rem 2rem;
     align-self: center;
+    border: 2px solid white;
 }
 
 .button a {
-    color: white;
+    color: #ebdc1e;
+
 }
 
 .info {
     display: grid;
     grid-area: 9/1/17/19;
+    background-color: black;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    align-content: center;
+    justify-content: center;
+    color: white;
+
+}
+
+.left {
+    border: 1px solid white;
+    border-right: transparent;
+    padding: 2em;
+}
+
+.left h3 {
+    font-size: 3rem;
+}
+
+.left p {
+    text-align: justify;
+    line-height: 2em;
+}
+
+.left button {
+    padding: 1em 2em;
+    border: 1px solid white;
+    background: transparent;
+}
+
+.right {
+    border: 1px solid white;
+    border-left: transparent;
+    display: flex;
+    justify-content: center;
+    padding: 2em;
 }
 
 footer {
     display: grid;
     grid-area: 17/1/19/19;
+    background-color: #24262b;
+    color: white;
+
+}
+
+.footer-content {
+    display: block;
+    align-self: center;
+    justify-content: center;
+}
+
+.social a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: #777b84;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: whitesmoke;
+    transition: all 0.5s ease;
+}
+
+.social a:hover {
+    color: #24262b;
+    background-color: darkgrey;
+}
+
+.copyright {
+    text-align: center;
+    align-items: center;
+
 }
