@@ -88,3 +88,95 @@ function listQuestions($dbConnect)
         }
     }
 }
+
+function listAliens($dbConnect)
+{
+    $sql = "SELECT * FROM alienraces";
+    $result = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<div class="universe-content-cards">';
+            echo '<h2>Alien Races</h2>';
+            $image = $row['imgPath'];
+            echo '<img src="../img/' . $image . '" alt="' . $image . '" style="width:18rem;">';
+            echo '<div class="universe-card-title">';
+            echo '<h3>' . $row['name'] . '</h3>';
+            echo '<br>';
+            echo '<hr>';
+            echo '<br>';
+            echo $row['description'];
+            echo '<br><br>';
+            echo '</div>';
+            echo '</div>';
+        }
+    }
+}
+
+function listPlanets($dbConnect)
+{
+    $sql = "SELECT * FROM planets";
+    $result = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<div class="universe-content-cards">';
+            echo '<h2>Planets</h2>';
+            $image = $row['imgPath'];
+            echo '<img src="../img/' . $image . '" alt="' . $image . '" style="width:18rem;">';
+            echo '<div class="universe-card-title">';
+            echo '<h3>' . $row['name'] . '</h3>';
+            echo '<br>';
+            echo '<hr>';
+            echo '<br>';
+            echo $row['description'];
+            echo '<br><br>';
+            echo '</div>';
+            echo '</div>';
+        }
+    }
+}
+
+function listShips($dbConnect)
+{
+    $sql = "SELECT * FROM ships";
+    $result = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<div class="universe-content-cards">';
+            echo '<h2>Ships</h2>';
+            $image = $row['imgPath'];
+            echo '<img src="../img/' . $image . '" alt="' . $image . '" style="width:18rem;">';
+            echo '<div class="universe-card-title">';
+            echo '<h3>' . $row['name'] . '</h3>';
+            echo '<br>';
+            echo '<hr>';
+            echo '<br>';
+            echo $row['description'];
+            echo '<br><br>';
+            echo '</div>';
+            echo '</div>';
+        }
+    }
+}
+
+function listForce($dbConnect)
+{
+    $sql = "SELECT * FROM theforce";
+    $result = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<div class="universe-content-cards">';
+            echo '<h2>The Force</h2>';
+            $image = $row['imgPath'];
+            echo '<img src="../img/' . $image . '" alt="' . $image . '" style="width:18rem;">';
+            echo '<div class="universe-card-title">';
+            echo '<h3>' . $row['name'] . '</h3>';
+            echo '<br>';
+            echo '<hr>';
+            echo '<br>';
+            echo $row['description'];
+            echo '<br><br>';
+            echo '</div>';
+            echo '</div>';
+        }
+    }
+}

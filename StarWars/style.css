@@ -212,19 +212,18 @@ footer {
 }
 
 /*************************Content Pages****************************************/
+.content {
+    display: grid;
+    grid-area: 2/1/17/19;
+    color: white;
+    align-content: flex-start;
+}
 
 .content h1 {
     padding: 0em .5em 1em .5em;
     font-size: 3rem;
     align-self: center;
 
-}
-
-.content {
-    display: grid;
-    grid-area: 2/1/17/19;
-    color: white;
-    align-content: flex-start;
 }
 
 .cards-content {
@@ -258,8 +257,59 @@ footer {
     padding: 1em;
 }
 
-.card-title a {
-    color: whitesmoke;
-    font-style: italic;
+
+
+/*************************Universe Pages****************************************/
+
+.universe-content h1 {
+    padding: .5em .5em 1em .5em;
     font-size: 2rem;
+    align-self: center;
+
+
+}
+
+.universe-content {
+    display: grid;
+    grid-area: 2/1/17/19;
+    color: white;
+    align-content: flex-start;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgba(137, 145, 147, 1) 55%);
+}
+
+.universe-content h2 {
+    padding: 2em 1em 1em 1em;
+}
+
+.universe-cards-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(260px, 1fr));
+    align-self: center;
+    justify-content: center;
+    grid-gap: 2em .5em;
+    padding: 1em 0em;
+}
+
+.universe-content-cards {
+    display: inline-block;
+    height: auto;
+    justify-content: center;
+    border: 2px solid white;
+    background-color: black;
+    margin: 0em 1em;
+    align-items: center;
+
+}
+
+.universe-content-cards img {
+    margin: auto;
+    display: block;
+
+}
+
+.universe-card-title {
+    padding: 1em;
+    font-size: .7rem;
 }

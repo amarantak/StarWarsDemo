@@ -36,13 +36,23 @@ $dbConnect = dbLink();
                 </ul>
             </nav>
         </header>
-        <div class="content">
-            <h1>Meet the Characters</h1>
-            <div class="cards-content">
+        <div class="universe-content">
+            <!--<h1>Star Wars Universe</h1><br>-->
+            <div class="universe-cards-content">
                 <?php
-                listItems($dbConnect);
+                listAliens($dbConnect);
+                ?>
+                <?php
+                listPlanets($dbConnect);
+                ?>
+                <?php
+                listShips($dbConnect);
+                ?>
+                <?php
+                listForce($dbConnect);
                 ?>
             </div>
+
         </div>
         <footer>
             <div class="footer-content">
