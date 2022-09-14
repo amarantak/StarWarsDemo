@@ -2,6 +2,13 @@
 session_start();
 error_reporting(0);
 include_once('../functions/functions.php');
+if ($_GET['logout'] == 'logout') {
+    session_unset();
+    session_destroy();
+    session_regenerate_id();
+}
+$dbConnect = dbLink();
+if ($dbConnect) echo '<!-- Connection Established -->';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,13 +33,15 @@ include_once('../functions/functions.php');
             </div>
         </header>
         <div class="content">
-            <div class="header">
-                <h1>Admin Dashboard</h1>
+            <div class="banner">
+                <h3>Sign Up</h3>
             </div>
-            <div class="cards-content">
-                <?php
-                listContent($dbconnect);
-                ?>
+            <div class="login-content">
+                <form action="dashboard.php" method="post">
+                    <input type="text" name="uname" placeholder="Enter Username">
+                    <input type="password" name="pwd" placeholder="Enter Password">
+                    <input type="submit" value="Login">
+                </form>
             </div>
         </div>
         <footer>

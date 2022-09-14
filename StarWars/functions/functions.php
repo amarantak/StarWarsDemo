@@ -180,3 +180,22 @@ function listForce($dbConnect)
         }
     }
 }
+
+/********************************************************** */
+
+function validate($dbConnect, $uname, $pwd)
+{
+    $sql = "SELECT * from users";
+    $res = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($res) > 0) {
+        while ($row = mysqli_fetch_assoc($res)) {
+            if ($row['uname'] == $uname) {
+                if ($row['pwd'] == $pwd) {
+                    $_SESSION['id'] = $row['id'];
+                    $_SESSION['auth'] = 'yes';
+                    return true;
+                }
+            }
+        }
+    }
+}

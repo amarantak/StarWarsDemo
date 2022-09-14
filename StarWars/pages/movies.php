@@ -62,7 +62,7 @@ $dbConnect = dbLink();
                         <span class="sr-only">Visit example.com</span>
                     </a>
                 </div><br>
-                <a href="#">Admin Login</a><br>
+                <a href="login.php">Admin Login</a><br>
                 <p>&copy;2022 Star Wars Fans</p>
             </div>
         </footer>

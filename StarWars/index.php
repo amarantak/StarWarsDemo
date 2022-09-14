@@ -84,7 +84,7 @@ if ($dbconnect) echo '<!-- Connection Established -->';
                         <span class="sr-only">Visit example.com</span>
                     </a>
                 </div><br>
-                <a href="pages/admin.php">Admin Login</a><br>
+                <a href="login.php">Admin Login</a><br>
                 <p>&copy;2022 Star Wars Fans</p>
             </div>
         </footer>
