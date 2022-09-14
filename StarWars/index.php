@@ -2,12 +2,7 @@
 session_start();
 error_reporting(0);
 include_once('functions/functions.php');
-if ($_GET['logout'] == 'logout') {
-    session_unset();
-    session_destroy();
-    session_regenerate_id();
-}
-$dbconnect = dbLink();
+$dbConnect = dbLink();
 if ($dbconnect) echo '<!-- Connection Established -->';
 ?>
 <!DOCTYPE html>
@@ -84,7 +79,7 @@ if ($dbconnect) echo '<!-- Connection Established -->';
                         <span class="sr-only">Visit example.com</span>
                     </a>
                 </div><br>
-                <a href="login.php">Admin Login</a><br>
+                <a href="pages/login.php">Admin Login</a><br>
                 <p>&copy;2022 Star Wars Fans</p>
             </div>
         </footer>

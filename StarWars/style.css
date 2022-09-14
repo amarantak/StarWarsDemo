@@ -313,3 +313,31 @@ footer {
     padding: 1em;
     font-size: .7rem;
 }
+
+/********************************************************/
+
+.banner {
+    padding: 1em;
+    display: flex;
+    margin: auto;
+}
+
+.banner h2 {
+    font-size: 2rem;
+}
+
+.login-content {
+    padding: 2em;
+    display: flex;
+    margin: auto;
+}
+
+form {
+    align-items: center;
+
+}
+
+input {
+    padding: .5em 1em;
+    border-radius: 6px;
+}

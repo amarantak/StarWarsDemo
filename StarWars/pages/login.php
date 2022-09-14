@@ -2,13 +2,13 @@
 session_start();
 error_reporting(0);
 include_once('../functions/functions.php');
+$dbConnect = dbLink();
+if ($dbConnect) echo '<!-- Connection Established -->';
 if ($_GET['logout'] == 'logout') {
     session_unset();
     session_destroy();
     session_regenerate_id();
 }
-$dbConnect = dbLink();
-if ($dbConnect) echo '<!-- Connection Established -->';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,12 +29,12 @@ if ($dbConnect) echo '<!-- Connection Established -->';
     <div class="grid-container">
         <header>
             <div class="logo">
-                <a href="index.html"><img src="../img/logo.png" alt=""></a>
+                <a href="../index.php"><img src="../img/logo.png" alt=""></a>
             </div>
         </header>
         <div class="content">
             <div class="banner">
-                <h3>Sign Up</h3>
+                <h2>Login</h2>
             </div>
             <div class="login-content">
                 <form action="dashboard.php" method="post">
