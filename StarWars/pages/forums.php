@@ -40,7 +40,7 @@ $dbConnect = dbLink();
             <h1>Meet the Characters</h1>
             <div class="cards-content">
                 <?php
-                listCharacters($dbConnect);
+                listItems($dbConnect);
                 ?>
             </div>
         </div>

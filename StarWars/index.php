@@ -35,9 +35,9 @@ if ($dbconnect) echo '<!-- Connection Established -->';
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="pages/movies.php">Movies Summary</a></li>
-                    <li><a href="pages/generic.php">Characters</a></li>
-                    <li><a href="pages/generic.php">Universe</a></li>
-                    <li><a href="pages/generic.php">Users Forum</a></li>
+                    <li><a href="pages/characters.php">Characters</a></li>
+                    <li><a href="pages/universe.php">Universe</a></li>
+                    <li><a href="pages/forums.php">Users Forum</a></li>
                 </ul>
             </nav>
         </header>
