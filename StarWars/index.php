@@ -2,7 +2,13 @@
 session_start();
 error_reporting(0);
 include_once('functions/functions.php');
-
+if ($_GET['logout'] == 'logout') {
+    session_unset();
+    session_destroy();
+    session_regenerate_id();
+}
+$dbconnect = dbLink();
+if ($dbconnect) echo '<!-- Connection Established -->';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,12 +29,12 @@ include_once('functions/functions.php');
     <div class="grid-container">
         <header>
             <div class="logo">
-                <a href="index.html"><img src="img/logo.png" alt="Star Wars Logo"></a>
+                <a href="index.php"><img src="img/logo.png" alt="Star Wars Logo"></a>
             </div>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="pages/generic.php">Movies Summary</a></li>
+                    <li><a href="pages/movies.php">Movies Summary</a></li>
                     <li><a href="pages/generic.php">Characters</a></li>
                     <li><a href="pages/generic.php">Universe</a></li>
                     <li><a href="pages/generic.php">Users Forum</a></li>

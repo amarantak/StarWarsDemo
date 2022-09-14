@@ -2,6 +2,8 @@
 session_start();
 error_reporting(0);
 include_once('../functions/functions.php');
+$dbConnect = dbLink();
+//if ($dbconnect) echo 'Connection Established'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,25 +24,23 @@ include_once('../functions/functions.php');
     <div class="grid-container">
         <header>
             <div class="logo">
-                <a href="index.html"><img src="../img/logo.png" alt=""></a>
+                <a href="../index.php"><img src="../img/logo.png" alt=""></a>
             </div>
             <nav>
                 <ul>
                     <li><a href="../index.php">Home</a></li>
-                    <li><a href="generic.php">Movies Summary</a></li>
-                    <li><a href="generic.php">Characters</a></li>
+                    <li><a href="movies.php">Movies Summary</a></li>
+                    <li><a href="characters.php">Characters</a></li>
                     <li><a href="generic.php">Universe</a></li>
                     <li><a href="generic.php">Users Forum</a></li>
                 </ul>
             </nav>
         </header>
         <div class="content">
-            <div class="header">
-                <h1>Detail</h1>
-            </div>
+            <h1>Meet the Characters</h1>
             <div class="cards-content">
                 <?php
-                listContent($dbconnect);
+                listCharacters($dbConnect);
                 ?>
             </div>
         </div>
