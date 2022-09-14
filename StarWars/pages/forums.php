@@ -37,10 +37,10 @@ $dbConnect = dbLink();
             </nav>
         </header>
         <div class="content">
-            <h1>Meet the Characters</h1>
+            <h1>Users Forum</h1>
             <div class="cards-content">
                 <?php
-                listItems($dbConnect);
+                listQuestions($dbConnect);
                 ?>
             </div>
         </div>

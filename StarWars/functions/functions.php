@@ -68,3 +68,23 @@ function listCharacters($dbConnect)
         }
     }
 }
+
+function listQuestions($dbConnect)
+{
+    $sql = "SELECT * FROM userforums";
+    $result = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<div class="content-cards">';
+            echo '<div class="card-title">';
+            echo '<h2>' . $row['email'] . '</h2>';
+            echo '<br>';
+            echo '<hr>';
+            echo '<br>';
+            echo $row['messages'];
+            echo '<br><br>';
+            echo '</div>';
+            echo '</div>';
+        }
+    }
+}
