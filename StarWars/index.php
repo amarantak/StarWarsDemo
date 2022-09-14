@@ -28,7 +28,7 @@ if ($dbconnect) echo '<!-- Connection Established -->';
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="pages/movies.php">Movies Summary</a></li>
                     <li><a href="pages/characters.php">Characters</a></li>
                     <li><a href="pages/universe.php">Universe</a></li>
