@@ -31,8 +31,8 @@ $dbConnect = dbLink();
                     <li><a href="../index.php">Home</a></li>
                     <li><a href="movies.php">Movies Summary</a></li>
                     <li><a href="characters.php">Characters</a></li>
-                    <li><a href="generic.php">Universe</a></li>
-                    <li><a href="generic.php">Users Forum</a></li>
+                    <li><a href="universe.php">Universe</a></li>
+                    <li><a href="forums.php">Users Forum</a></li>
                 </ul>
             </nav>
         </header>
