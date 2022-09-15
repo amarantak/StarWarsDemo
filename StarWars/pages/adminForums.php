@@ -64,8 +64,8 @@ if ($_SESSION['auth'] == 'yes') {
                 <h3>Add Entry</h3><hr>
                 <form action="addmessage.php" method="post">
                     <input type="text" name="email" placeholder="Enter Email"><br><br>
-                    <input type="text" name="password" placeholder="Enter Password"><br><br>
-                    <textarea name="description" id="" cols="30" rows="10" placeholder="Enter Message"></textarea>
+                    <input type="text" name="pwd" placeholder="Enter Password"><br><br>
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="Enter Message"></textarea>
                     <input type="hidden" name="userId" value="' . $_SESSION['id'] . '"><br>
                     <input type="submit" value="Add Entry">
                 </form>

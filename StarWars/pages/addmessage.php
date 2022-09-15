@@ -8,10 +8,10 @@ if ($dbConnect) {
 }
 showMem();
 $email = $_POST['email'];
-$password = $_POST['password'];
-$description = $_POST['description'];
+$pwd = $_POST['pwd'];
+$message = $_POST['message'];
 $userId = $_POST['userId'];
-insertForum($dbConnect, $email, $password, $description, $userId);
+insertForum($dbConnect, $email, $pwd, $message, $userId);
 ?>
 <!DOCTYPE html>
 <html lang="en">

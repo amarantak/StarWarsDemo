@@ -599,10 +599,10 @@ function deleteForce2($dbConnect, $id)
 
 ///////////////////////////////////////////////////////////////////////////////
 
-function insertForum($dbConnect, $email, $password, $description, $userId)
+function insertForum($dbConnect, $email, $pwd, $message, $userId)
 {
-    $sql = "INSERT INTO userforums (id,email,password, description, userId) VALUES 
-(null,'$email','$password','$description','$userId')";
+    $sql = "INSERT INTO userforums (id,email,pwd, message, userId) VALUES 
+(null,'$email','$pwd','$message','$userId')";
     if ($dbConnect->query($sql) == true) {
         echo 'Entry added<br>';
     } else {
@@ -619,22 +619,22 @@ function editForum($dbConnect, $uid)
         while ($row = mysqli_fetch_assoc($res)) {
             if ($row['userId'] == $uid) {
                 echo '
-                    <form method="post" action="editforum.php">
-                    <input type="text" name="email" value="' . $row['email'] . '"><br><br>
-                    <input type="text" name="password" value="' . $row['password'] . '"><br><br>
-                    <textarea name="description" cols="30" rows="10">' . $row['description'] . '</textarea><br>
-                    <input type="hidden" name="messageId" value="' . $row['id'] . '">
-                    <input type="submit" value="Edit Entry">
-                    </form>
+                <form method="post" action="editforum.php">
+                <input type="text" name="email" value="' . $row['email'] . '"><br><br>
+                <input type="text" name="pwd" value="' . $row['pwd'] . '"><br><br>
+                <textarea name="message" cols="30" rows="10">' . $row['message'] . '</textarea><br>
+                <input type="hidden" name="forumId" value="' . $row['id'] . '">
+                <input type="submit" value="Edit Entry">
+                </form>
                     ';
             }
         }
     }
 }
 
-function editForum2($dbConnect, $email, $password, $desc, $pid)
+function editForum2($dbConnect, $email, $pwd, $message, $pid)
 {
-    $sql = "UPDATE userforums SET email='$email', password='$password', description='$desc', WHERE id='$pid'";
+    $sql = "UPDATE userforums SET email='$email', pwd='$pwd', message='$message', WHERE id='$pid'";
     if (mysqli_query($dbConnect, $sql)) {
         echo 'Entry Updated';
     } else {
