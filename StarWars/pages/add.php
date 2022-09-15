@@ -13,7 +13,11 @@ $img = $_POST['imgPath'];
 $userId = $_POST['userId'];
 insertMovie($dbConnect, $title, $description, $img, $userId);
 
-
+$alienname = $_POST['name'];
+$aliendescription = $_POST['description'];
+$alienimg = $_POST['imgPath'];
+$alienuserId = $_POST['userId'];
+insertAlien($dbConnect, $alienname, $aliendescription, $alienimg, $alienuserId);
 ?>
 <!DOCTYPE html>
 <html lang="en">

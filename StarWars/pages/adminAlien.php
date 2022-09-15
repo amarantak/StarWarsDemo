@@ -42,7 +42,7 @@ if ($_SESSION['auth'] == 'yes') {
         </div>
         <nav>
             <ul>
-                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="dashboard.php">Movies</a></li>
                 <li><a href="adminAlien.php">Alien Races</a></li>
             </ul>
         </nav>
@@ -65,14 +65,14 @@ if ($_SESSION['auth'] == 'yes') {
                     <input type="submit" value="Add Alien Race">
                 </form>
                 
-                <h3>Edit Movies</h3><hr>
+                <h3>Edit Alien Race</h3><hr>
                 ';
                 echo '<div class="item item1">';
-                editMovies($dbConnect, $_SESSION['id']);
+                editAlien($dbConnect, $_SESSION['id']);
                 echo '</div>';
                 echo '<div class="item item2">';
-                echo '<br><h3>Delete Reviews</h3><br><hr><br>';
-                deleteMovies($dbConnect, $_SESSION['id']);
+                echo '<br><h3>Delete Alien Race</h3><br><hr><br>';
+                deleteAlien($dbConnect, $_SESSION['id']);
                 echo '</div>';
             } else {
                 echo '<p><a href="../index.php">Return</a></p> ';

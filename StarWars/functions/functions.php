@@ -200,6 +200,8 @@ function validate($dbConnect, $uname, $pwd)
     }
 }
 
+/********************************************************************** */
+
 function insertMovie($dbConnect, $title, $description, $img, $userId)
 {
     $sql = "INSERT INTO movies(id,title,description,imgPath, userId) VALUES 
@@ -263,3 +265,71 @@ function delete($dbConnect, $id)
         echo 'Mistakes have been made';
     }
 }
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+function insertAlien($dbConnect, $alienname, $aliendescription, $alienimg, $alienuserId)
+{
+    $sql = "INSERT INTO alienraces (id,name,description,imgPath, userId) VALUES 
+(null,'$alienname','$aliendescription','$alienimg','$alienuserId')";
+    if ($dbConnect->query($sql) == true) {
+        echo 'Record added<br>';
+    } else {
+        echo 'Error: ' . $sql . '<br>' . $dbConnect->error;
+    }
+    $dbConnect->close();
+}
+/*
+function editMovies($dbConnect, $uid)
+{
+    $sql = "SELECT * from movies";
+    $res = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($res) > 0) {
+        while ($row = mysqli_fetch_assoc($res)) {
+            if ($row['userId'] == $uid) {
+                echo '
+                    <form method="post" action="edit.php">
+                    <input type="text" name="title" value="' . $row['title'] . '"><br><br>
+                    <input type="text" name="imgPath" value="' . $row['imgPath'] . '"><br><br>
+                    <textarea name="description" cols="30" rows="10">' . $row['description'] . '</textarea><br>
+                    <input type="hidden" name="movieId" value="' . $row['id'] . '">
+                    <input type="submit" value="Edit Entry">
+                    </form>
+                    ';
+            }
+        }
+    }
+}
+
+function edit($dbConnect, $title, $desc, $img, $pid)
+{
+    $sql = "UPDATE movies SET title='$title', description='$desc', imgPath='$img' WHERE id='$pid'";
+    if (mysqli_query($dbConnect, $sql)) {
+        echo 'Movie Updated';
+    } else {
+        echo 'Mistakes have been made';
+    }
+}
+
+function deleteMovies($dbConnect, $uid)
+{
+    $sql = "SELECT * FROM movies WHERE userId = $uid";
+    $result = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<p><a href="delete.php?id=' . $row['id'] . '">[ Delete ]</a> ' . $row['title'] . '</p>';
+        }
+    }
+}
+
+function delete($dbConnect, $id)
+{
+    $sql = "DELETE FROM movies WHERE id = $id";
+    if (mysqli_query($dbConnect, $sql)) {
+        echo 'Movie Deleted';
+    } else {
+        echo 'Mistakes have been made';
+    }
+}
+*/

@@ -398,7 +398,13 @@ nav {
 }
 
 .pages-main .item1 {
-    display: inline-flex;
-    justify-content: space-evenly;
-    margin: 0em 2em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(260px, 1fr));
+    margin: 2em 2em;
+
+}
+
+.pages-main input[type=submit] {
+    background-color: #ebdc1e;
 }
