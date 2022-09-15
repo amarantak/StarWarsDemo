@@ -233,9 +233,9 @@ function editMovies($dbConnect, $uid)
     }
 }
 
-function edit($dbConnect, $name, $desc, $img, $pid)
+function edit($dbConnect, $title, $desc, $img, $pid)
 {
-    $sql = "UPDATE movies SET name='$name', description='$desc', imgPath='$img' WHERE id='$pid'";
+    $sql = "UPDATE movies SET title='$title', description='$desc', imgPath='$img' WHERE id='$pid'";
     if (mysqli_query($dbConnect, $sql)) {
         echo 'Movie Updated';
     } else {

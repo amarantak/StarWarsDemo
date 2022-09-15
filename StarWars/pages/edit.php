@@ -7,7 +7,7 @@ if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
 //showMem();
-$name = htmlspecialchars($_POST['name']);
+$name = htmlspecialchars($_POST['title']);
 $desc = htmlspecialchars($_POST['description']);
 $img = htmlspecialchars($_POST['imgPath']);
 $pid = $_POST['movieId'];
