@@ -56,13 +56,13 @@ if ($_SESSION['auth'] == 'yes') {
                 echo 'Welcome ' . ' - ' . $uname . '!' . '<br>';
                 echo '</h2>';
                 echo '
-                <h3>Add Movies</h3><hr>
+                <h3>Add Alien</h3><hr>
                 <form action="add.php" method="post">
-                    <input type="text" name="title" placeholder="Enter Title"><br><br>
+                    <input type="text" name="name" placeholder="Enter Name"><br><br>
                     <input type="text" name="imgPath" placeholder="Image Path"><br><br>
                     <textarea name="description" id="" cols="30" rows="10" placeholder="Enter Description"></textarea>
                     <input type="hidden" name="userId" value="' . $_SESSION['id'] . '"><br>
-                    <input type="submit" value="Add Movie">
+                    <input type="submit" value="Add Alien Race">
                 </form>
                 
                 <h3>Edit Movies</h3><hr>
@@ -71,7 +71,7 @@ if ($_SESSION['auth'] == 'yes') {
                 editMovies($dbConnect, $_SESSION['id']);
                 echo '</div>';
                 echo '<div class="item item2">';
-                echo '<br><h3>Delete Movies</h3><br><hr><br>';
+                echo '<br><h3>Delete Reviews</h3><br><hr><br>';
                 deleteMovies($dbConnect, $_SESSION['id']);
                 echo '</div>';
             } else {

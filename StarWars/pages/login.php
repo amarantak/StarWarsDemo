@@ -2,13 +2,13 @@
 session_start();
 error_reporting(0);
 include_once('../functions/functions.php');
-$dbConnect = dbLink();
-if ($dbConnect) echo '<!-- Connection Established -->';
 if ($_GET['logout'] == 'logout') {
     session_unset();
     session_destroy();
     session_regenerate_id();
 }
+$dbConnect = dbLink();
+if ($dbConnect) echo '<!-- Connection Established -->';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,7 @@ if ($_GET['logout'] == 'logout') {
     <div class="grid-container">
         <header>
             <div class="logo">
-                <a href="../index.php"><img src="../img/logo.png" alt=""></a>
+                <a href="../index.php"><img src="../img/logo.png" alt="Star Wars Logo"></a>
             </div>
         </header>
         <div class="content">
@@ -62,7 +62,7 @@ if ($_GET['logout'] == 'logout') {
                         <span class="sr-only">Visit example.com</span>
                     </a>
                 </div><br>
-                <a href="#">Admin Login</a><br>
+                <a href="login.php">Admin Login</a><br>
                 <p>&copy;2022 Star Wars Fans</p>
             </div>
         </footer>

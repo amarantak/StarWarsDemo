@@ -7,10 +7,13 @@ if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
 showMem();
-$name = $_POST['name'];
+$title = $_POST['title'];
 $description = $_POST['description'];
+$img = $_POST['imgPath'];
 $userId = $_POST['userId'];
-insertReview($dbConnect, $name, $description, $userId);
+insertMovie($dbConnect, $title, $description, $img, $userId);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -341,3 +341,64 @@ input {
     padding: .5em 1em;
     border-radius: 6px;
 }
+
+/**************************************************************/
+
+.pages-container {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+    height: auto;
+    background-color: #0c0404;
+    color: whitesmoke;
+}
+
+.pages-logo {
+    display: grid;
+    grid-area: 1/1/2/3;
+}
+
+.pages-logo img {
+    height: 15vh;
+}
+
+nav {
+    display: grid;
+    grid-area: 1/3/2/16;
+    align-content: center;
+    justify-content: center;
+}
+
+.logout {
+    display: grid;
+    grid-area: 1/16/2/19;
+    text-transform: uppercase;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.logout a {
+    color: whitesmoke;
+}
+
+.pages-main {
+    display: grid;
+    grid-area: 2/1/18/19;
+    grid-gap: 0 2em;
+    margin: 0 2em;
+}
+
+.pages-main h2 {
+    margin: 1em 0;
+}
+
+.pages-main hr {
+    height: 1vh;
+}
+
+.pages-main .item1 {
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin: 0em 2em;
+}
