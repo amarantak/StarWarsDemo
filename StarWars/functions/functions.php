@@ -81,7 +81,7 @@ function listQuestions($dbConnect)
             echo '<br>';
             echo '<hr>';
             echo '<br>';
-            echo $row['description'];
+            echo $row['message'];
             echo '<br><br>';
             echo '</div>';
             echo '</div>';
