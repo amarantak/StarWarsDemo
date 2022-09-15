@@ -464,3 +464,201 @@ function deletePlanet2($dbConnect, $id)
         echo 'Mistakes have been made';
     }
 }
+
+////////////////////////////////////////////////////////////////////////////////////
+
+function insertShip($dbConnect, $name, $description, $img, $userId)
+{
+    $sql = "INSERT INTO ships (id,name,description,imgPath, userId) VALUES 
+(null,'$name','$description','$img','$userId')";
+    if ($dbConnect->query($sql) == true) {
+        echo 'Entry added<br>';
+    } else {
+        echo 'Error: ' . $sql . '<br>' . $dbConnect->error;
+    }
+    $dbConnect->close();
+}
+
+function editShip($dbConnect, $uid)
+{
+    $sql = "SELECT * from ships";
+    $res = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($res) > 0) {
+        while ($row = mysqli_fetch_assoc($res)) {
+            if ($row['userId'] == $uid) {
+                echo '
+                    <form method="post" action="editship.php">
+                    <input type="text" name="name" value="' . $row['name'] . '"><br><br>
+                    <input type="text" name="imgPath" value="' . $row['imgPath'] . '"><br><br>
+                    <textarea name="description" cols="30" rows="10">' . $row['description'] . '</textarea><br>
+                    <input type="hidden" name="shipId" value="' . $row['id'] . '">
+                    <input type="submit" value="Edit Entry">
+                    </form>
+                    ';
+            }
+        }
+    }
+}
+
+function editShip2($dbConnect, $name, $desc, $img, $pid)
+{
+    $sql = "UPDATE ships SET name='$name', description='$desc', imgPath='$img' WHERE id='$pid'";
+    if (mysqli_query($dbConnect, $sql)) {
+        echo 'Entry Updated';
+    } else {
+        echo 'Mistakes have been made';
+    }
+}
+
+function deleteShip($dbConnect, $uid)
+{
+    $sql = "SELECT * FROM ships WHERE userId = $uid";
+    $result = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<p><a href="deleteShip.php?id=' . $row['id'] . '">[ Delete ]</a> ' . $row['name'] . '</p>';
+        }
+    }
+}
+
+function deleteShip2($dbConnect, $id)
+{
+    $sql = "DELETE FROM ships WHERE id = $id";
+    if (mysqli_query($dbConnect, $sql)) {
+        echo 'Entry Deleted';
+    } else {
+        echo 'Mistakes have been made';
+    }
+}
+
+//////////////////////////////////////////////////////////////////////
+
+function insertForce($dbConnect, $name, $description, $img, $userId)
+{
+    $sql = "INSERT INTO theforce (id,name,description,imgPath, userId) VALUES 
+(null,'$name','$description','$img','$userId')";
+    if ($dbConnect->query($sql) == true) {
+        echo 'Entry added<br>';
+    } else {
+        echo 'Error: ' . $sql . '<br>' . $dbConnect->error;
+    }
+    $dbConnect->close();
+}
+
+function editForce($dbConnect, $uid)
+{
+    $sql = "SELECT * from theforce";
+    $res = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($res) > 0) {
+        while ($row = mysqli_fetch_assoc($res)) {
+            if ($row['userId'] == $uid) {
+                echo '
+                    <form method="post" action="editforce.php">
+                    <input type="text" name="name" value="' . $row['name'] . '"><br><br>
+                    <input type="text" name="imgPath" value="' . $row['imgPath'] . '"><br><br>
+                    <textarea name="description" cols="30" rows="10">' . $row['description'] . '</textarea><br>
+                    <input type="hidden" name="forceId" value="' . $row['id'] . '">
+                    <input type="submit" value="Edit Entry">
+                    </form>
+                    ';
+            }
+        }
+    }
+}
+
+function editForce2($dbConnect, $name, $desc, $img, $pid)
+{
+    $sql = "UPDATE theforce SET name='$name', description='$desc', imgPath='$img' WHERE id='$pid'";
+    if (mysqli_query($dbConnect, $sql)) {
+        echo 'Entry Updated';
+    } else {
+        echo 'Mistakes have been made';
+    }
+}
+
+function deleteForce($dbConnect, $uid)
+{
+    $sql = "SELECT * FROM theforce WHERE userId = $uid";
+    $result = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<p><a href="deleteForce.php?id=' . $row['id'] . '">[ Delete ]</a> ' . $row['name'] . '</p>';
+        }
+    }
+}
+
+function deleteForce2($dbConnect, $id)
+{
+    $sql = "DELETE FROM theforce WHERE id = $id";
+    if (mysqli_query($dbConnect, $sql)) {
+        echo 'Entry Deleted';
+    } else {
+        echo 'Mistakes have been made';
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+function insertForum($dbConnect, $email, $password, $description, $userId)
+{
+    $sql = "INSERT INTO userforums (id,email,password, description, userId) VALUES 
+(null,'$email','$password','$description','$userId')";
+    if ($dbConnect->query($sql) == true) {
+        echo 'Entry added<br>';
+    } else {
+        echo 'Error: ' . $sql . '<br>' . $dbConnect->error;
+    }
+    $dbConnect->close();
+}
+
+function editForum($dbConnect, $uid)
+{
+    $sql = "SELECT * from userforums";
+    $res = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($res) > 0) {
+        while ($row = mysqli_fetch_assoc($res)) {
+            if ($row['userId'] == $uid) {
+                echo '
+                    <form method="post" action="editforum.php">
+                    <input type="text" name="email" value="' . $row['email'] . '"><br><br>
+                    <input type="text" name="password" value="' . $row['password'] . '"><br><br>
+                    <textarea name="description" cols="30" rows="10">' . $row['description'] . '</textarea><br>
+                    <input type="hidden" name="messageId" value="' . $row['id'] . '">
+                    <input type="submit" value="Edit Entry">
+                    </form>
+                    ';
+            }
+        }
+    }
+}
+
+function editForum2($dbConnect, $email, $password, $desc, $pid)
+{
+    $sql = "UPDATE userforums SET name='$email',password='$password', description='$desc', WHERE id='$pid'";
+    if (mysqli_query($dbConnect, $sql)) {
+        echo 'Entry Updated';
+    } else {
+        echo 'Mistakes have been made';
+    }
+}
+
+function deleteForum($dbConnect, $uid)
+{
+    $sql = "SELECT * FROM userforums WHERE userId = $uid";
+    $result = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<p><a href="deleteForum.php?id=' . $row['id'] . '">[ Delete ]</a> ' . $row['email'] . '</p>';
+        }
+    }
+}
+
+function deleteForum2($dbConnect, $id)
+{
+    $sql = "DELETE FROM userforums WHERE id = $id";
+    if (mysqli_query($dbConnect, $sql)) {
+        echo 'Entry Deleted';
+    } else {
+        echo 'Mistakes have been made';
+    }
+}
