@@ -1,14 +1,19 @@
 <?php
 session_start();
 error_reporting(0);
-include_once('../functions/functions.php');
+include_once('../../functions/functions.php');
 $dbConnect = dbLink();
 if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
 //showMem();
-$id = $_GET['id'];
-deleteAlien2($dbConnect, $id);
+$name = htmlspecialchars($_POST['name']);
+$desc = htmlspecialchars($_POST['description']);
+$img = htmlspecialchars($_POST['imgPath']);
+$pid = $_POST['planetId'];
+
+editPlanet2($dbConnect, $name, $desc, $img, $pid);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +23,7 @@ deleteAlien2($dbConnect, $id);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../style.css">
     <style></style>
 </head>
 
@@ -26,7 +31,7 @@ deleteAlien2($dbConnect, $id);
 
     <script>
         function bounce() {
-            window.location.href = 'adminAlien.php';
+            window.location.href = 'adminPlanets.php';
         }
     </script>
 </body>

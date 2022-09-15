@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include_once('../functions/functions.php');
+include_once('../../functions/functions.php');
 $dbConnect = dbLink();
 if ($dbConnect) {
     echo '<!-- Connection established -->';
@@ -28,7 +28,7 @@ if ($_SESSION['auth'] == 'yes') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@ if ($_SESSION['auth'] == 'yes') {
 <body>
     <div class="pages-container">
         <div class="pages-logo">
-            <a href="../index.php"><img src="../img/logo.png" class="logo" alt="Star Wars Logo">
+            <a href="../../index.php"><img src="../../img/logo.png" class="logo" alt="Star Wars Logo">
         </div>
         <nav>
             <ul>
@@ -52,7 +52,7 @@ if ($_SESSION['auth'] == 'yes') {
             </ul>
         </nav>
         <div class="logout">
-            <p><a href="../index.php?logout=logout">Logout</a></p>
+            <p><a href="../../index.php?logout=logout">Logout</a></p>
         </div>
         <div class="pages-main">
             <?php
@@ -81,7 +81,7 @@ if ($_SESSION['auth'] == 'yes') {
                 deleteMovies($dbConnect, $_SESSION['id']);
                 echo '</div>';
             } else {
-                echo '<p><a href="../index.php">Return</a></p> ';
+                echo '<p><a href="../../index.php">Return</a></p> ';
             }
             ?>
         </div>

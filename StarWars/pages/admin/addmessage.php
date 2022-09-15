@@ -1,17 +1,16 @@
 <?php
 session_start();
 error_reporting(0);
-include_once('../functions/functions.php');
+include_once('../../functions/functions.php');
 $dbConnect = dbLink();
 if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
 showMem();
-$name = $_POST['name'];
-$description = $_POST['description'];
-$img = $_POST['imgPath'];
+$email = $_POST['email'];
+$message = $_POST['message'];
 $userId = $_POST['userId'];
-insertCharacter($dbConnect, $name, $description, $img, $userId);
+insertForum($dbConnect, $email, $message, $userId);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,13 +20,13 @@ insertCharacter($dbConnect, $name, $description, $img, $userId);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body onload="bounce()">
     <script>
         function bounce() {
-            window.location.href = 'adminCharacters.php';
+            window.location.href = 'adminForums.php';
         }
     </script>
 </body>

@@ -1,17 +1,14 @@
 <?php
 session_start();
 error_reporting(0);
-include_once('../functions/functions.php');
+include_once('../../functions/functions.php');
 $dbConnect = dbLink();
 if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
-showMem();
-$title = $_POST['title'];
-$description = $_POST['description'];
-$img = $_POST['imgPath'];
-$userId = $_POST['userId'];
-insertMovie($dbConnect, $title, $description, $img, $userId);
+//showMem();
+$id = $_GET['id'];
+deleteForce2($dbConnect, $id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,13 +18,15 @@ insertMovie($dbConnect, $title, $description, $img, $userId);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../style.css">
+    <style></style>
 </head>
 
 <body onload="bounce()">
+
     <script>
         function bounce() {
-            window.location.href = 'dashboard.php';
+            window.location.href = 'adminForce.php';
         }
     </script>
 </body>

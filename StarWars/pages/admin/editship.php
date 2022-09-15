@@ -1,14 +1,19 @@
 <?php
 session_start();
 error_reporting(0);
-include_once('../functions/functions.php');
+include_once('../../functions/functions.php');
 $dbConnect = dbLink();
 if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
 //showMem();
-$id = $_GET['id'];
-deleteForce2($dbConnect, $id);
+$name = htmlspecialchars($_POST['name']);
+$desc = htmlspecialchars($_POST['description']);
+$img = htmlspecialchars($_POST['imgPath']);
+$pid = $_POST['shipId'];
+
+editShip2($dbConnect, $name, $desc, $img, $pid);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +31,7 @@ deleteForce2($dbConnect, $id);
 
     <script>
         function bounce() {
-            window.location.href = 'adminForce.php';
+            window.location.href = 'adminShips.php';
         }
     </script>
 </body>

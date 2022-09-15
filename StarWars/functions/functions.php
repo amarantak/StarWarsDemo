@@ -599,10 +599,10 @@ function deleteForce2($dbConnect, $id)
 
 ///////////////////////////////////////////////////////////////////////////////
 
-function insertForum($dbConnect, $email, $pwd, $message, $userId)
+function insertForum($dbConnect, $email, $message, $userId)
 {
-    $sql = "INSERT INTO userforums (id,email,pwd, message, userId) VALUES 
-(null,'$email','$pwd','$message','$userId')";
+    $sql = "INSERT INTO userforums (id,email, message, userId) VALUES 
+(null,'$email','$message','$userId')";
     if ($dbConnect->query($sql) == true) {
         echo 'Entry added<br>';
     } else {
@@ -621,7 +621,6 @@ function editForum($dbConnect, $uid)
                 echo '
                 <form method="post" action="editforum.php">
                 <input type="text" name="email" value="' . $row['email'] . '"><br><br>
-                <input type="text" name="pwd" value="' . $row['pwd'] . '"><br><br>
                 <textarea name="message" cols="30" rows="10">' . $row['message'] . '</textarea><br>
                 <input type="hidden" name="forumId" value="' . $row['id'] . '">
                 <input type="submit" value="Edit Entry">
@@ -632,9 +631,10 @@ function editForum($dbConnect, $uid)
     }
 }
 
-function editForum2($dbConnect, $email, $pwd, $message, $pid)
+function editForum2($dbConnect, $email, $message, $pid)
 {
-    $sql = "UPDATE userforums SET email='$email', pwd='$pwd', message='$message', WHERE id='$pid'";
+    $uid = $_SESSION['id'];
+    $sql = "UPDATE userforums SET email='$email', message='$message', userId='$uid' WHERE id='$pid'";
     if (mysqli_query($dbConnect, $sql)) {
         echo 'Entry Updated';
     } else {

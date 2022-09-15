@@ -79,7 +79,7 @@ if ($dbconnect) echo '<!-- Connection Established -->';
                         <span class="sr-only">Visit example.com</span>
                     </a>
                 </div><br>
-                <a href="pages/login.php">Admin Login</a><br>
+                <a href="pages/admin/login.php">Admin Login</a><br>
                 <p>&copy;2022 Star Wars Fans</p>
             </div>
         </footer>

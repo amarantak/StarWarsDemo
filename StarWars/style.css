@@ -376,10 +376,11 @@ nav {
     justify-content: center;
     align-content: center;
     align-items: center;
+
 }
 
 .logout a {
-    color: whitesmoke;
+    color: #ebdc1e;
 }
 
 .pages-main {

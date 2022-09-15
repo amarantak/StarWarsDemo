@@ -1,17 +1,19 @@
 <?php
 session_start();
 error_reporting(0);
-include_once('../functions/functions.php');
+include_once('../../functions/functions.php');
 $dbConnect = dbLink();
 if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
-showMem();
-$name = $_POST['name'];
-$description = $_POST['description'];
-$img = $_POST['imgPath'];
-$userId = $_POST['userId'];
-insertPlanet($dbConnect, $name, $description, $img, $userId);
+//showMem();
+$name = htmlspecialchars($_POST['name']);
+$desc = htmlspecialchars($_POST['description']);
+$img = htmlspecialchars($_POST['imgPath']);
+$pid = $_POST['alienId'];
+
+editAlien2($dbConnect, $name, $desc, $img, $pid);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,12 +24,14 @@ insertPlanet($dbConnect, $name, $description, $img, $userId);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style.css">
+    <style></style>
 </head>
 
 <body onload="bounce()">
+
     <script>
         function bounce() {
-            window.location.href = 'adminPlanets.php';
+            window.location.href = 'adminAlien.php';
         }
     </script>
 </body>

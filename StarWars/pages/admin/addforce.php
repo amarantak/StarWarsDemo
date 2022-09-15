@@ -1,19 +1,17 @@
 <?php
 session_start();
 error_reporting(0);
-include_once('../functions/functions.php');
+include_once('../../functions/functions.php');
 $dbConnect = dbLink();
 if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
-//showMem();
-$name = htmlspecialchars($_POST['name']);
-$desc = htmlspecialchars($_POST['description']);
-$img = htmlspecialchars($_POST['imgPath']);
-$pid = $_POST['alienId'];
-
-editAlien2($dbConnect, $name, $desc, $img, $pid);
-
+showMem();
+$name = $_POST['name'];
+$description = $_POST['description'];
+$img = $_POST['imgPath'];
+$userId = $_POST['userId'];
+insertForce($dbConnect, $name, $description, $img, $userId);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,14 +22,12 @@ editAlien2($dbConnect, $name, $desc, $img, $pid);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style.css">
-    <style></style>
 </head>
 
 <body onload="bounce()">
-
     <script>
         function bounce() {
-            window.location.href = 'adminAlien.php';
+            window.location.href = 'adminForce.php';
         }
     </script>
 </body>

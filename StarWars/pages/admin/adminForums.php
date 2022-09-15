@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include_once('../functions/functions.php');
+include_once('../../functions/functions.php');
 $dbConnect = dbLink();
 if ($dbConnect) {
     echo '<!-- Connection established -->';
@@ -28,7 +28,7 @@ if ($_SESSION['auth'] == 'yes') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@ if ($_SESSION['auth'] == 'yes') {
 <body>
     <div class="pages-container">
         <div class="pages-logo">
-            <a href="../index.php"><img src="../img/logo.png" class="logo" alt="Star Wars Logo">
+            <a href="../../index.php"><img src="../../img/logo.png" class="logo" alt="Star Wars Logo">
         </div>
         <nav>
             <ul>
@@ -52,20 +52,19 @@ if ($_SESSION['auth'] == 'yes') {
             </ul>
         </nav>
         <div class="logout">
-            <p><a href="../index.php?logout=logout">Logout</a></p>
+            <p><a href="../../index.php?logout=logout">Logout</a></p>
         </div>
         <div class="pages-main">
             <?php
             if ($validate) {
                 echo '<h2>';
-                echo 'Admin - Characters' . '<br>';
+                echo 'Admin - Forums' . '<br>';
                 echo '</h2>';
                 echo '
                 <h3>Add Entry</h3><hr>
-                <form action="addcharacter.php" method="post">
-                    <input type="text" name="name" placeholder="Enter Name"><br><br>
-                    <input type="text" name="imgPath" placeholder="Image Path"><br><br>
-                    <textarea name="description" id="" cols="30" rows="10" placeholder="Enter Description"></textarea>
+                <form action="addmessage.php" method="post">
+                    <input type="text" name="email" placeholder="Enter Email"><br><br>
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="Enter Message"></textarea>
                     <input type="hidden" name="userId" value="' . $_SESSION['id'] . '"><br>
                     <input type="submit" value="Add Entry">
                 </form>
@@ -73,14 +72,14 @@ if ($_SESSION['auth'] == 'yes') {
                 <h3>Edit Entry</h3><hr>
                 ';
                 echo '<div class="item item1">';
-                editCharacter($dbConnect, $_SESSION['id']);
+                editForum($dbConnect, $_SESSION['id']);
                 echo '</div>';
                 echo '<div class="item item2">';
                 echo '<br><h3>Delete Entry</h3><br><hr><br>';
-                deleteCharacter($dbConnect, $_SESSION['id']);
+                deleteForum($dbConnect, $_SESSION['id']);
                 echo '</div>';
             } else {
-                echo '<p><a href="../index.php">Return</a></p> ';
+                echo '<p><a href="../../index.php">Return</a></p> ';
             }
             ?>
         </div>

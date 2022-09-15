@@ -1,18 +1,18 @@
 <?php
 session_start();
 error_reporting(0);
-include_once('../functions/functions.php');
+include_once('../../functions/functions.php');
 $dbConnect = dbLink();
 if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
 //showMem();
-$name = htmlspecialchars($_POST['name']);
+$name = htmlspecialchars($_POST['title']);
 $desc = htmlspecialchars($_POST['description']);
 $img = htmlspecialchars($_POST['imgPath']);
-$pid = $_POST['forceId'];
+$pid = $_POST['movieId'];
 
-editForce2($dbConnect, $name, $desc, $img, $pid);
+editMovies2($dbConnect, $name, $desc, $img, $pid);
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ editForce2($dbConnect, $name, $desc, $img, $pid);
 
     <script>
         function bounce() {
-            window.location.href = 'adminTheForce.php';
+            window.location.href = 'dashboard.php';
         }
     </script>
 </body>

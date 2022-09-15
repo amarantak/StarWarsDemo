@@ -1,14 +1,17 @@
 <?php
 session_start();
 error_reporting(0);
-include_once('../functions/functions.php');
+include_once('../../functions/functions.php');
 $dbConnect = dbLink();
 if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
-//showMem();
-$id = $_GET['id'];
-deleteCharacter2($dbConnect, $id);
+showMem();
+$title = $_POST['title'];
+$description = $_POST['description'];
+$img = $_POST['imgPath'];
+$userId = $_POST['userId'];
+insertMovie($dbConnect, $title, $description, $img, $userId);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,14 +22,12 @@ deleteCharacter2($dbConnect, $id);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style></style>
 </head>
 
 <body onload="bounce()">
-
     <script>
         function bounce() {
-            window.location.href = 'adminCharacters.php';
+            window.location.href = 'dashboard.php';
         }
     </script>
 </body>

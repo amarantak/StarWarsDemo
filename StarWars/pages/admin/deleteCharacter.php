@@ -1,17 +1,18 @@
 <?php
-    session_start();
-    error_reporting(0);
-    include_once('../functions/functions.php');
-    $dbConnect = dbLink();
-    if($dbConnect){
-        echo '<!-- Connection established -->';
-    }
-    //showMem();
-    $id = $_GET['id'];
-    delete($dbConnect,$id);
+session_start();
+error_reporting(0);
+include_once('../../functions/functions.php');
+$dbConnect = dbLink();
+if ($dbConnect) {
+    echo '<!-- Connection established -->';
+}
+//showMem();
+$id = $_GET['id'];
+deleteCharacter2($dbConnect, $id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,12 +21,14 @@
     <link rel="stylesheet" href="../css/style.css">
     <style></style>
 </head>
+
 <body onload="bounce()">
 
     <script>
-        function bounce(){
-            window.location.href = 'dashboard.php';
+        function bounce() {
+            window.location.href = 'adminCharacters.php';
         }
     </script>
 </body>
+
 </html>
