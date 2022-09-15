@@ -42,8 +42,13 @@ if ($_SESSION['auth'] == 'yes') {
         </div>
         <nav>
             <ul>
-                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="dashboard.php">Movies</a></li>
                 <li><a href="adminAlien.php">Alien Races</a></li>
+                <li><a href="adminCharacters.php">Characters</a></li>
+                <li><a href="adminPlanets.php">Planets</a></li>
+                <li><a href="adminShips.php">Ships</a></li>
+                <li><a href="adminTheForce.php">The Force</a></li>
+                <li><a href="adminForums.php">Forums</a></li>
             </ul>
         </nav>
         <div class="logout">
@@ -53,11 +58,12 @@ if ($_SESSION['auth'] == 'yes') {
             <?php
             if ($validate) {
                 echo '<h2>';
-                echo 'Welcome ' . ' - ' . $uname . '!' . '<br>';
+                echo 'Welcome ' . ' - ' . $uname . '!' . '<br><br>';
+                echo 'Admin - Movies' . '<br>';
                 echo '</h2>';
                 echo '
-                <h3>Add Movies</h3><hr>
-                <form action="add.php" method="post">
+                <h3>Add Entry</h3><hr>
+                <form action="addmovie.php" method="post">
                     <input type="text" name="title" placeholder="Enter Title"><br><br>
                     <input type="text" name="imgPath" placeholder="Image Path"><br><br>
                     <textarea name="description" id="" cols="30" rows="10" placeholder="Enter Description"></textarea>
@@ -65,13 +71,13 @@ if ($_SESSION['auth'] == 'yes') {
                     <input type="submit" value="Add Movie">
                 </form>
                 
-                <h3>Edit Movies</h3><hr>
+                <h3>Edit Entry</h3><hr>
                 ';
                 echo '<div class="item item1">';
                 editMovies($dbConnect, $_SESSION['id']);
                 echo '</div>';
                 echo '<div class="item item2">';
-                echo '<br><h3>Delete Movies</h3><br><hr><br>';
+                echo '<br><h3>Delete Entry</h3><br><hr><br>';
                 deleteMovies($dbConnect, $_SESSION['id']);
                 echo '</div>';
             } else {

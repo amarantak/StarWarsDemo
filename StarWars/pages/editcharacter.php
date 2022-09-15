@@ -7,12 +7,12 @@ if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
 //showMem();
-$name = htmlspecialchars($_POST['title']);
+$name = htmlspecialchars($_POST['name']);
 $desc = htmlspecialchars($_POST['description']);
 $img = htmlspecialchars($_POST['imgPath']);
-$pid = $_POST['movieId'];
+$pid = $_POST['characterId'];
 
-edit($dbConnect, $name, $desc, $img, $pid);
+editCharacter2($dbConnect, $name, $desc, $img, $pid);
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ edit($dbConnect, $name, $desc, $img, $pid);
 
     <script>
         function bounce() {
-            window.location.href = 'dashboard.php';
+            window.location.href = 'adminCharacters.php';
         }
     </script>
 </body>

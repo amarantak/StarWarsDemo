@@ -6,18 +6,9 @@ $dbConnect = dbLink();
 if ($dbConnect) {
     echo '<!-- Connection established -->';
 }
-showMem();
-$title = $_POST['title'];
-$description = $_POST['description'];
-$img = $_POST['imgPath'];
-$userId = $_POST['userId'];
-insertMovie($dbConnect, $title, $description, $img, $userId);
-
-$alienname = $_POST['name'];
-$aliendescription = $_POST['description'];
-$alienimg = $_POST['imgPath'];
-$alienuserId = $_POST['userId'];
-insertAlien($dbConnect, $alienname, $aliendescription, $alienimg, $alienuserId);
+//showMem();
+$id = $_GET['id'];
+deleteAlien2($dbConnect, $id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,12 +19,14 @@ insertAlien($dbConnect, $alienname, $aliendescription, $alienimg, $alienuserId);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style></style>
 </head>
 
 <body onload="bounce()">
+
     <script>
         function bounce() {
-            window.location.href = 'dashboard.php';
+            window.location.href = 'adminAlien.php';
         }
     </script>
 </body>

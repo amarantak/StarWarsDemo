@@ -58,11 +58,11 @@ if ($_SESSION['auth'] == 'yes') {
             <?php
             if ($validate) {
                 echo '<h2>';
-                echo 'Admin - Alien Races' . '<br>';
+                echo 'Admin - Characters' . '<br>';
                 echo '</h2>';
                 echo '
                 <h3>Add Entry</h3><hr>
-                <form action="addalien.php" method="post">
+                <form action="addcharacter.php" method="post">
                     <input type="text" name="name" placeholder="Enter Name"><br><br>
                     <input type="text" name="imgPath" placeholder="Image Path"><br><br>
                     <textarea name="description" id="" cols="30" rows="10" placeholder="Enter Description"></textarea>
@@ -73,11 +73,11 @@ if ($_SESSION['auth'] == 'yes') {
                 <h3>Edit Entry</h3><hr>
                 ';
                 echo '<div class="item item1">';
-                editAlien($dbConnect, $_SESSION['id']);
+                editCharacter($dbConnect, $_SESSION['id']);
                 echo '</div>';
                 echo '<div class="item item2">';
                 echo '<br><h3>Delete Entry</h3><br><hr><br>';
-                deleteAlien($dbConnect, $_SESSION['id']);
+                deleteCharacter($dbConnect, $_SESSION['id']);
                 echo '</div>';
             } else {
                 echo '<p><a href="../index.php">Return</a></p> ';
