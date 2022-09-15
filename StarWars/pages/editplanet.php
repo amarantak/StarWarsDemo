@@ -10,7 +10,7 @@ if ($dbConnect) {
 $name = htmlspecialchars($_POST['name']);
 $desc = htmlspecialchars($_POST['description']);
 $img = htmlspecialchars($_POST['imgPath']);
-$pid = $_POST['characterId'];
+$pid = $_POST['planetId'];
 
 editPlanet2($dbConnect, $name, $desc, $img, $pid);
 

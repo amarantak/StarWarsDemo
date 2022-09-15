@@ -10,7 +10,7 @@ if ($dbConnect) {
 $name = htmlspecialchars($_POST['name']);
 $desc = htmlspecialchars($_POST['description']);
 $img = htmlspecialchars($_POST['imgPath']);
-$pid = $_POST['ForceId'];
+$pid = $_POST['forceId'];
 
 editForce2($dbConnect, $name, $desc, $img, $pid);
 
@@ -31,7 +31,7 @@ editForce2($dbConnect, $name, $desc, $img, $pid);
 
     <script>
         function bounce() {
-            window.location.href = 'adminForce.php';
+            window.location.href = 'adminTheForce.php';
         }
     </script>
 </body>

@@ -425,7 +425,7 @@ function editPlanet($dbConnect, $uid)
                     <input type="text" name="name" value="' . $row['name'] . '"><br><br>
                     <input type="text" name="imgPath" value="' . $row['imgPath'] . '"><br><br>
                     <textarea name="description" cols="30" rows="10">' . $row['description'] . '</textarea><br>
-                    <input type="hidden" name="characterId" value="' . $row['id'] . '">
+                    <input type="hidden" name="planetId" value="' . $row['id'] . '">
                     <input type="submit" value="Edit Entry">
                     </form>
                     ';
@@ -634,7 +634,7 @@ function editForum($dbConnect, $uid)
 
 function editForum2($dbConnect, $email, $password, $desc, $pid)
 {
-    $sql = "UPDATE userforums SET name='$email',password='$password', description='$desc', WHERE id='$pid'";
+    $sql = "UPDATE userforums SET email='$email', password='$password', description='$desc', WHERE id='$pid'";
     if (mysqli_query($dbConnect, $sql)) {
         echo 'Entry Updated';
     } else {
