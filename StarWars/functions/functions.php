@@ -377,3 +377,90 @@ function editCharacter2($dbConnect, $name, $desc, $img, $pid)
         echo 'Mistakes have been made';
     }
 }
+
+function deleteCharacter($dbConnect, $uid)
+{
+    $sql = "SELECT * FROM characters WHERE userId = $uid";
+    $result = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<p><a href="deleteCharacter.php?id=' . $row['id'] . '">[ Delete ]</a> ' . $row['name'] . '</p>';
+        }
+    }
+}
+
+function deleteCharacter2($dbConnect, $id)
+{
+    $sql = "DELETE FROM characters WHERE id = $id";
+    if (mysqli_query($dbConnect, $sql)) {
+        echo 'Entry Deleted';
+    } else {
+        echo 'Mistakes have been made';
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+function insertPlanet($dbConnect, $name, $description, $img, $userId)
+{
+    $sql = "INSERT INTO planets (id,name,description,imgPath, userId) VALUES 
+(null,'$name','$description','$img','$userId')";
+    if ($dbConnect->query($sql) == true) {
+        echo 'Entry added<br>';
+    } else {
+        echo 'Error: ' . $sql . '<br>' . $dbConnect->error;
+    }
+    $dbConnect->close();
+}
+
+function editPlanet($dbConnect, $uid)
+{
+    $sql = "SELECT * from planets";
+    $res = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($res) > 0) {
+        while ($row = mysqli_fetch_assoc($res)) {
+            if ($row['userId'] == $uid) {
+                echo '
+                    <form method="post" action="editplanet.php">
+                    <input type="text" name="name" value="' . $row['name'] . '"><br><br>
+                    <input type="text" name="imgPath" value="' . $row['imgPath'] . '"><br><br>
+                    <textarea name="description" cols="30" rows="10">' . $row['description'] . '</textarea><br>
+                    <input type="hidden" name="characterId" value="' . $row['id'] . '">
+                    <input type="submit" value="Edit Entry">
+                    </form>
+                    ';
+            }
+        }
+    }
+}
+
+function editPlanet2($dbConnect, $name, $desc, $img, $pid)
+{
+    $sql = "UPDATE planets SET name='$name', description='$desc', imgPath='$img' WHERE id='$pid'";
+    if (mysqli_query($dbConnect, $sql)) {
+        echo 'Entry Updated';
+    } else {
+        echo 'Mistakes have been made';
+    }
+}
+
+function deletePlanet($dbConnect, $uid)
+{
+    $sql = "SELECT * FROM planets WHERE userId = $uid";
+    $result = mysqli_query($dbConnect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<p><a href="deleteplanet.php?id=' . $row['id'] . '">[ Delete ]</a> ' . $row['name'] . '</p>';
+        }
+    }
+}
+
+function deletePlanet2($dbConnect, $id)
+{
+    $sql = "DELETE FROM planets WHERE id = $id";
+    if (mysqli_query($dbConnect, $sql)) {
+        echo 'Entry Deleted';
+    } else {
+        echo 'Mistakes have been made';
+    }
+}
