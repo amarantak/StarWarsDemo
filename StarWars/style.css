@@ -392,7 +392,7 @@ footer {
     }
 }
 
-/********************************************************/
+/*************************Login *******************************/
 
 .banner {
     padding: 1em;
@@ -486,6 +486,7 @@ nav {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto-fill, minmax(260px, 1fr));
     margin: 2em 2em;
+    grid-gap: 3.5em 1em;
 
 }
 

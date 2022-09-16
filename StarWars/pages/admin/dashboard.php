@@ -67,7 +67,7 @@ if ($_SESSION['auth'] == 'yes') {
                 echo 'Admin - Movies' . '<br>';
                 echo '</h2>';
                 echo '
-                <h3>Add Entry</h3><hr>
+                <h3>Add Entry</h3><br><hr><br>
                 <form action="addmovie.php" method="post">
                     <label for="title">Title:<br>
                     <input type="text" name="title" placeholder="Enter Title"></label><br><br>
@@ -77,9 +77,9 @@ if ($_SESSION['auth'] == 'yes') {
                     <textarea name="description" cols="30" rows="10" placeholder="Enter Description"></textarea></label>
                     <input type="hidden" name="userId" value="' . $_SESSION['id'] . '"><br>
                     <input type="submit" value="Add Movie">
-                </form>
+                </form><br>
                 
-                <h3>Edit Entry</h3><hr>
+                <h3>Edit Entry</h3><br><hr>
                 ';
                 echo '<div class="item item1">';
                 editMovies($dbConnect, $_SESSION['id']);
