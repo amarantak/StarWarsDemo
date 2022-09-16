@@ -8,7 +8,7 @@ if ($_GET['logout'] == 'logout') {
     session_regenerate_id();
 }
 $dbConnect = dbLink();
-if ($dbConnect) echo '<!-- Connection Established -->';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

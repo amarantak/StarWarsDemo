@@ -18,6 +18,11 @@ if ($_SESSION['auth'] == 'yes') {
     $validate = true;
 } else if ($validatePwd && $validateUname) {
     $validate = validate($dbConnect, $uname, $pwd);
+} else {
+    //redirect to login
+    header("Location: login.php");
+    echo 'Invalid Login';
+    die;
 }
 ?>
 <!DOCTYPE html>
@@ -38,7 +43,7 @@ if ($_SESSION['auth'] == 'yes') {
 <body>
     <div class="pages-container">
         <div class="pages-logo">
-            <a href="../../index.php"><img src="../../img/logo.png" class="logo" alt="Star Wars Logo">
+            <a href="../../index.php"><img src="../../img/logo.png" class="logo" alt="Star Wars Logo"></a>
         </div>
         <nav>
             <ul>
@@ -52,7 +57,7 @@ if ($_SESSION['auth'] == 'yes') {
             </ul>
         </nav>
         <div class="logout">
-            <p><a href="../../index.php?logout=logout">Logout</a></p>
+            <p><a href="login.php?logout=logout">Logout</a></p>
         </div>
         <div class="pages-main">
             <?php
@@ -64,9 +69,12 @@ if ($_SESSION['auth'] == 'yes') {
                 echo '
                 <h3>Add Entry</h3><hr>
                 <form action="addmovie.php" method="post">
-                    <input type="text" name="title" placeholder="Enter Title"><br><br>
-                    <input type="text" name="imgPath" placeholder="Image Path"><br><br>
-                    <textarea name="description" id="" cols="30" rows="10" placeholder="Enter Description"></textarea>
+                    <label for="title">Title:<br>
+                    <input type="text" name="title" placeholder="Enter Title"></label><br><br>
+                    <label for="imgPath">Image Path:<br>
+                    <input type="text" name="imgPath" placeholder="Image Path"></label><br><br>
+                    <label for="description">Description:<br>
+                    <textarea name="description" cols="30" rows="10" placeholder="Enter Description"></textarea></label>
                     <input type="hidden" name="userId" value="' . $_SESSION['id'] . '"><br>
                     <input type="submit" value="Add Movie">
                 </form>
@@ -76,12 +84,10 @@ if ($_SESSION['auth'] == 'yes') {
                 echo '<div class="item item1">';
                 editMovies($dbConnect, $_SESSION['id']);
                 echo '</div>';
-                echo '<div class="item item2">';
                 echo '<br><h3>Delete Entry</h3><br><hr><br>';
                 deleteMovies($dbConnect, $_SESSION['id']);
-                echo '</div>';
             } else {
-                echo '<p><a href="../../index.php">Return</a></p> ';
+                echo 'Invalid Login';
             }
             ?>
         </div>

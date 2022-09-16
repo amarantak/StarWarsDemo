@@ -4,6 +4,12 @@ error_reporting(0);
 include_once('functions/functions.php');
 $dbConnect = dbLink();
 if ($dbconnect) echo '<!-- Connection Established -->';
+
+if ($_GET['logout'] == 'logout') {
+    session_unset();
+    session_destroy();
+    session_regenerate_id();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +45,7 @@ if ($dbconnect) echo '<!-- Connection Established -->';
         <section class="hero">
             <img src="img/hero.webp" class="hero-image" alt="Image of Star Wars The Trilogy DVD">
             <div class="cta">
-                <h2>When <br>Everything<br>Began</h2>
+                <h1>When <br>Everything<br>Began</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Consequuntur, laboriosam.</p>
                 <div class="button">
                     <a href="#">Know More</a>
@@ -53,9 +59,9 @@ if ($dbconnect) echo '<!-- Connection Established -->';
                 </h3><br>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquid odit dolor nam sit, delectus dolore quas eos ea molestias!Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquid odit dolor nam sit, delectus dolore quas eos ea molestias!Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquid odit dolor nam sit, delectus dolore quas eos ea molestias!</p>
                 <br><br>
-                <button>
+                <div class="button">
                     <a href="">Know More</a>
-                </button>
+                </div>
             </div>
             <div class="right">
                 <img src="img/book.jpg" alt="Image of a Book">

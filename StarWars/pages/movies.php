@@ -24,7 +24,7 @@ $dbConnect = dbLink();
     <div class="grid-container">
         <header>
             <div class="logo">
-                <a href="../index.php"><img src="../img/logo.png" alt=""></a>
+                <a href="../index.php"><img src="../img/logo.png" alt="Star Wars Logo"></a>
             </div>
             <nav>
                 <ul>

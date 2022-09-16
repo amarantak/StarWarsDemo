@@ -194,6 +194,11 @@ function validate($dbConnect, $uname, $pwd)
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['auth'] = 'yes';
                     return true;
+                } else {
+                    //redirect to login
+                    header("Location: login.php");
+                    echo 'Invalid Login';
+                    die;
                 }
             }
         }
@@ -223,12 +228,17 @@ function editMovies($dbConnect, $uid)
             if ($row['userId'] == $uid) {
                 echo '
                     <form method="post" action="editmovie.php">
-                    <input type="text" name="title" value="' . $row['title'] . '"><br><br>
-                    <input type="text" name="imgPath" value="' . $row['imgPath'] . '"><br><br>
-                    <textarea name="description" cols="30" rows="10">' . $row['description'] . '</textarea><br>
+                    <div class="form">
+                    <label for="title">Title:<br>
+                    <input type="text" name="title" value="' . $row['title'] . '"></label><br><br>
+                    <label for="imgPath">Image Path:<br> 
+                    <input type="text" name="imgPath" value="' . $row['imgPath'] . '"></label><br><br>
+                    <label for="description">Description: 
+                    <textarea name="description" cols="30" rows="10">' . $row['description'] . '</textarea></label><br><br>
                     <input type="hidden" name="movieId" value="' . $row['id'] . '">
                     <input type="submit" value="Edit Entry">
                     </form>
+                    </div>
                     ';
             }
         }
