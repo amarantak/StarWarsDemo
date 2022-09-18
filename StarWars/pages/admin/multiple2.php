@@ -60,32 +60,30 @@ if ($_SESSION['auth'] == 'yes') {
             <p><a href="login.php?logout=logout">Logout</a></p>
         </div>
         <div class="pages-main">
-            <?php
-            if ($validate) {
-                echo '<h2>';
-                echo 'Welcome ' . ' - ' . $uname . '!' . '<br><br>';
-                echo 'Admin - Movies' . '<br>';
-                echo '</h2>';
-                echo '
-                <h3>Add Entry</h3><br><hr><br>
-                <form action="multiple2.php" method="post">
-                    <label for="rows">Number of Rows:<br>
-                    <input type="text" name="n"></label><br><br>
-                    <input type="submit" name="s" value="Add Rows">
-                    <input type="hidden" name="userId" value="' . $_SESSION['id'] . '"><br>
-                </form><br>
-                
-                <h3>Edit Entry</h3><br><hr>
-                ';
-                echo '<div class="item item1">';
-                editMovies($dbConnect, $_SESSION['id']);
-                echo '</div>';
-                echo '<br><h3>Delete Entry</h3><br><hr><br>';
-                deleteMovies($dbConnect, $_SESSION['id']);
-            } else {
-                echo 'Invalid Login';
-            }
-            ?>
+            <form action="addmovie.php" method="post">
+                <?php
+                //error_reporting(0);
+                $n = $_POST['n'];
+                $userId = $_POST['userId'];
+                for ($i = 1; $i <= $n; $i++) {
+                ?> <div class="multiple">
+                        <label for="title">Title:<br>
+                            <input type="text" name="<?php echo $i . 'title'; ?>" value="">
+                            <input type="hidden" name="n" value="<?php echo $n; ?>">
+                        </label>
+                        <label for="description">Description:<br>
+                            <textarea type="text" name="<?php echo $i . 'description'; ?>" value="">
+                        </textarea>
+                        </label>
+                        <label for="imgPath">Image Path:<br>
+                            <input type="text" name="<?php echo $i . 'imgPath'; ?>" value="">
+                        </label>
+                    </div>
+                    <input type="hidden" name="userId" value="<?php echo $_SESSION['id'] ?>"><br>
+                <?php                }
+                ?>
+                <input type="submit" name="ins" value=" SAVE ">
+            </form>
         </div>
     </div>
 </body>

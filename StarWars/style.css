@@ -494,6 +494,15 @@ nav {
     background-color: #ebdc1e;
 }
 
+.pages-main .multiple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, minmax(260px, 1fr));
+    margin: 2em 2em;
+    grid-gap: 3.5em 1em;
+
+}
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
 

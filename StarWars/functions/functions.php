@@ -209,14 +209,16 @@ function validate($dbConnect, $uname, $pwd)
 
 function insertMovie($dbConnect, $title, $description, $img, $userId)
 {
-    $sql = "INSERT INTO movies(id,title,description,imgPath, userId) VALUES 
-(null,'$title','$description','$img','$userId')";
-    if ($dbConnect->query($sql) == true) {
-        echo 'Record added<br>';
-    } else {
-        echo 'Error: ' . $sql . '<br>' . $dbConnect->error;
+    if (isset($_POST['ins'])) {
+        $n = $_POST['n'];
+        for ($i = 1; $i <= $n; $i++) {
+            $title = $_POST[$i . "title"];
+            $description = $_POST[$i . "description"];
+            $img = $_POST[$i . "imgPath"];
+            mysqli_query($dbConnect, "INSERT INTO movies (id,title,imgPath, description,userId) VALUES (null,'$title','$description','$img','$userId')");
+        }
+        echo "Data Added Succesfully";
     }
-    $dbConnect->close();
 }
 
 function editMovies($dbConnect, $uid)
