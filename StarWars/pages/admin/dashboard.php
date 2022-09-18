@@ -68,7 +68,7 @@ if ($_SESSION['auth'] == 'yes') {
                 echo '</h2>';
                 echo '
                 <h3>Add Entry</h3><br><hr><br>
-                <form action="multiple2.php" method="post">
+                <form action="multiple.php" method="post">
                     <label for="rows">Number of Rows:<br>
                     <input type="text" name="n"></label><br><br>
                     <input type="submit" name="s" value="Add Rows">
